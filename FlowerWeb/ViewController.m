@@ -9,6 +9,12 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UISegmentedControl *selColorChoice;
+@property (weak, nonatomic) IBOutlet UIWebView *webvFlowerView;
+@property (weak, nonatomic) IBOutlet UIWebView *webvFlowerDetailView;
+
+- (IBAction)getFlower:(UIButton *)sender;
+- (IBAction)toggleFlowerDetail:(UISwitch *)sender;
 
 @end
 
@@ -24,4 +30,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)getFlower:(UIButton *)sender {
+}
+
+- (IBAction)toggleFlowerDetail:(UISwitch *)sender {
+}
 @end

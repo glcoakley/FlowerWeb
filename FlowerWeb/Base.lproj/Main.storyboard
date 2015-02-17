@@ -35,6 +35,9 @@
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="uO7-De-0DL">
                                 <rect key="frame" x="255" y="86" width="51" height="31"/>
+                                <connections>
+                                    <action selector="toggleFlowerDetail:" destination="vXZ-lx-hvc" eventType="valueChanged" id="TIX-uU-Ak3"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Show Photo Details:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ley-SN-SOF">
                                 <rect key="frame" x="93" y="91" width="156" height="21"/>
@@ -55,15 +58,23 @@
                                 <state key="normal" title="Get New Photo">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="getFlower:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="vgz-4u-aZJ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="selColorChoice" destination="R8P-Zo-87C" id="HpF-MQ-MQu"/>
+                        <outlet property="webvFlowerDetailView" destination="IhA-MN-Xwe" id="C7X-Tt-rLc"/>
+                        <outlet property="webvFlowerView" destination="e9V-Ff-ZOv" id="t6F-pw-mhL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="259" y="339"/>
+            <point key="canvasLocation" x="186" y="335"/>
         </scene>
     </scenes>
 </document>
