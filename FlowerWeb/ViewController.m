@@ -24,10 +24,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.webvFlowerDetailView.hidden = NO;
+    self.webvFlowerView.hidden = NO;
+    [self getFlower:nil];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+    printf("\n\n\nMEMORY WARNING!!!!!\n\n\n");
     // Dispose of any resources that can be recreated.
 }
 
@@ -40,14 +44,20 @@
     NSString    *color;
     int         sessionID;
     
+    printf("We're here!\n");
     color = [self.selColorChoice titleForSegmentAtIndex:self.selColorChoice.selectedSegmentIndex];
     sessionID = random()%50000;
     imageURLString = [NSString stringWithFormat:@"http://www.floraphotographs.com/showrandomios.php?color=%@&session=%d",color, sessionID];
+    printf("%s\n",imageURLString.UTF8String);
     detailURLString = [NSString stringWithFormat:@"http://www.floraphotographs.com/detailios.php?session=%d", sessionID];
+    printf("%s\n", detailURLString.UTF8String);
     imageURL=[NSURL URLWithString:imageURLString];
     detailURL=[NSURL URLWithString:detailURLString];
+    printf("Going into flower load view\n");
     [self.webvFlowerView loadRequest:[NSURLRequest requestWithURL:imageURL]];
+    printf("Now loading the detail\n");
     [self.webvFlowerDetailView loadRequest:[NSURLRequest requestWithURL:detailURL]];
+    printf("Done!\n\n");
 }
 
 - (IBAction)toggleFlowerDetail:(UISwitch *)sender
